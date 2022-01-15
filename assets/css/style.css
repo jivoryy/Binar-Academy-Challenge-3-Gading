@@ -1,0 +1,67 @@
+#hero {
+  position: relative;
+  color: white;
+  background-image: url("../img/main-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero-content {
+  top: 30%;
+}
+
+.ground-level-center {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-menu {
+  transform: translateX(30%);
+}
+
+#the-games {
+  position: relative;
+  color: white;
+  background-image: url("../img/the-games-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#features {
+  position: relative;
+  color: white;
+  background-image: url("../img/features.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#requirements {
+  position: relative;
+  color: white;
+  background-image: url("../img/requirements.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 10vh;
+}
+
+@media screen and (min-height: 767px) {
+  #requirements {
+    height: 100vh;
+  }
+}
+
+#top-score {
+  position: relative;
+  color: white;
+  background-image: url("../img/top-score-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
