@@ -4,7 +4,7 @@
   background-image: url("../img/main-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  padding-bottom: 20vh;
 }
 
 .hero-content {
@@ -26,7 +26,7 @@
   background-image: url("../img/the-games-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  padding-bottom: 20vh;
 }
 
 #features {
@@ -35,7 +35,7 @@
   background-image: url("../img/features.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  padding-bottom: 20vh;
 }
 
 #requirements {
@@ -47,7 +47,28 @@
   padding-bottom: 20vh;
 }
 
+#top-score {
+  position: relative;
+  color: white;
+  background-image: url("../img/top-score-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 20vh;
+}
+
 @media screen and (min-height: 767px) {
+  #hero {
+    height: 100vh;
+  }
+
+  #the-games {
+    height: 100vh;
+  }
+
+  #features {
+    height: 100vh;
+  }
+
   #requirements {
     height: 100vh;
   }
@@ -55,13 +76,4 @@
   #top-score {
     height: 100vh;
   }
-}
-
-#top-score {
-  position: relative;
-  color: white;
-  background-image: url("../img/top-score-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 10vh;
 }
