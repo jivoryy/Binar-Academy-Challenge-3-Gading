@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 20vh;
+  padding-top: 20vh;
 }
 
 .hero-content {
@@ -27,6 +28,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 20vh;
+  padding-top: 20vh;
 }
 
 #features {
@@ -36,6 +38,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 20vh;
+  padding-top: 20vh;
 }
 
 #requirements {
@@ -45,6 +48,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 20vh;
+  padding-top: 20vh;
 }
 
 #top-score {
@@ -54,18 +58,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 20vh;
+  padding-top: 20vh;
 }
 
-@media screen and (min-height: 767px) {
+@media screen and (min-height: 600px) {
   #hero {
     height: 100vh;
   }
 
-  #the-games {
+  #features {
     height: 100vh;
   }
+}
 
-  #features {
+@media screen and (min-height: 767px) {
+  #the-games {
     height: 100vh;
   }
 
