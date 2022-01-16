@@ -20,10 +20,6 @@
   margin-right: auto;
 }
 
-.header-menu {
-  transform: translateX(8%);
-}
-
 #the-games {
   position: relative;
   color: white;
@@ -48,11 +44,15 @@
   background-image: url("../img/requirements.png");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 10vh;
+  padding-bottom: 20vh;
 }
 
 @media screen and (min-height: 767px) {
   #requirements {
+    height: 100vh;
+  }
+
+  #top-score {
     height: 100vh;
   }
 }
@@ -63,5 +63,5 @@
   background-image: url("../img/top-score-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  padding-bottom: 10vh;
 }
