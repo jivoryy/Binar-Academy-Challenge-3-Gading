@@ -217,7 +217,7 @@
       <div class="container">
         <div class="row">
           <div class="col"></div>
-          <div class="col">
+          <div class="col position-relative">
             <h3>What's so special?</h3>
             <h1>FEATURES</h1>
             <br />
@@ -287,7 +287,7 @@
           <div class="col-md-6 align-self-center text-start">
             <h1>TOP SCORE</h1>
             <p>This top score from various games from this platform</p>
-            <button type="button" class="btn btn-warning btn-lg">
+            <button type="button" id="see-more-button" class="btn btn-warning">
               See More
             </button>
           </div>
@@ -397,6 +397,100 @@
         </div>
       </div>
     </section>
+
+    <section id="newsletter" class="d-grid align-content-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="newsletter-img"></div>
+          </div>
+          <div class="col-md-6">
+            <h3>Want to stay in touch?</h3>
+            <h1 class="pt-4 pb-1">NEWSLETTER</h1>
+            <h1 class="pb-4">SUBSCRIBE</h1>
+            <p class="pb-5">
+              In order to start receiving our news, all you have to do is enter
+              your email address. Everything else will be taken care of by us.
+              We will send you emails containing information about game. We
+              don't spam.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <div id="email-wrapper">
+                  <div class="float-container">
+                    <label
+                      for="exampleFormControlInput1"
+                      class="form-label text-light"
+                    >
+                      Your email address
+                    </label>
+                    <br />
+                    <input
+                      type="email"
+                      class="bg-dark"
+                      id="exampleFormControlInput1"
+                      placeholder="youremail@binar.co.id"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <button
+                  type="button"
+                  id="subscribe-button"
+                  class="btn btn-warning"
+                >
+                  Subscribe now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
+        >
+          <div class="col-lg-1 d-flex align-items-center"></div>
+          <div class="nav col-lg-11 justify-content-end list-unstyled d-flex">
+            <div class="me-lg-5">MAIN</div>
+            <div class="me-lg-5">ABOUT</div>
+            <div class="me-lg-5">GAME FEATURES</div>
+            <div class="me-lg-5">SYSTEM REQUIREMENTS</div>
+            <div class="me-lg-5 pe-lg-4">QUOTES</div>
+            <div class="me-lg-5">
+              <img src="./assets/img/facebook.svg" alt="" />
+            </div>
+            <div class="me-lg-5">
+              <img src="./assets/img/twitter.svg" alt="" />
+            </div>
+            <div class="me-lg-5">
+              <img src="./assets/img/Vector.svg" alt="" />
+            </div>
+            <div class=""><img src="./assets/img/twitch.svg" alt="" /></div>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+        >
+          <div class="col-md-4 d-flex align-items-center">
+            <span class="text-muted">
+              © 2018 Your Games, Inc. All Rights Reserved
+            </span>
+          </div>
+
+          <ul class="nav col-md-8 justify-content-end list-unstyled d-flex">
+            <li class="ms-lg-3">PRIVACY POLICY</li>
+            <li class="ms-lg-3">|</li>
+            <li class="ms-lg-3">TERMS OF SERVICE</li>
+            <li class="ms-lg-3">|</li>
+            <li class="ms-lg-3">CODE OF CONDUCT</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
