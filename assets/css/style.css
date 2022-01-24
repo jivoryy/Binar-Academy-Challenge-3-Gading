@@ -1,15 +1,73 @@
-#hero {
+/* FONTS */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+nav {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 64px;
+}
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* CSS for EVERY PAGE SECTION */
+
+section {
   position: relative;
   color: white;
-  background-image: url("../img/main-bg.jpg");
+  padding-top: 15vh;
+  padding-bottom: 20vh;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 20vh;
-  padding-top: 20vh;
+  background-position: center;
+}
+
+.btn-warning {
+  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+  border-radius: 4px;
+}
+
+/* PAGE SECTION INDIVIDUAL CSS */
+/* Main CTA */
+
+#hero {
+  background-image: url("../img/main-bg.jpg");
+  height: 100vh;
 }
 
 .hero-content {
   top: 30%;
+}
+
+#main-button {
+  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+  border-radius: 4px;
+  padding: 18.7px 55.57px 19.3px 56.58px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .ground-level-center {
@@ -21,48 +79,95 @@
   margin-right: auto;
 }
 
+/* About + Gallery */
+
 #the-games {
-  position: relative;
-  color: white;
   background-image: url("../img/the-games-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 20vh;
-  padding-top: 20vh;
 }
+
+/* Game Feature */
 
 #features {
-  position: relative;
-  color: white;
   background-image: url("../img/features.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 20vh;
-  padding-top: 20vh;
 }
+
+/* Syst Req */
 
 #requirements {
-  position: relative;
-  color: white;
   background-image: url("../img/requirements.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 20vh;
-  padding-top: 20vh;
 }
+
+/* Press Quote */
 
 #top-score {
-  position: relative;
-  color: white;
-  background-image: url("../img/top-score-bg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 20vh;
-  padding-top: 20vh;
+  background-image: url("../img/top-score.png");
 }
 
-@media screen and (min-height: 600px) {
-  #hero {
+.quotes-card {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.quotes-card-second {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.prof-pic-game {
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  margin: auto;
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  z-index: 2;
+}
+
+.bg-prof-pic-game {
+  top: 20%;
+  bottom: 0;
+  left: 30%;
+  margin: auto;
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-color: yellow;
+  z-index: 1;
+}
+
+.gamer-name {
+  font-size: 24px;
+  color: #ffb548;
+}
+
+.workplace {
+  font-size: 18px;
+}
+
+.quote-sentence {
+  margin-top: 1em;
+  margin-left: 1em;
+  text-align: left;
+}
+
+.date-quote {
+  margin-left: 0.5em;
+  text-align: start;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 767px) and (min-height: 992px) {
+  section {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-height: 500px) {
+  #the-games {
     height: 100vh;
   }
 
@@ -71,16 +176,32 @@
   }
 }
 
-@media screen and (min-height: 767px) {
-  #the-games {
-    height: 100vh;
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .quotes-card {
+    width: 25.1666em;
+    height: 10.1666em;
+    margin: 1em 1em 1em 4em;
   }
 
-  #requirements {
-    height: 100vh;
+  .quotes-card-second {
+    width: 25.1666em;
+    height: 10.1666em;
+    margin: 1em 4em 1em 0em;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .quotes-card {
+    margin: 1.5em 0 1em 0;
   }
 
-  #top-score {
-    height: 100vh;
+  .quotes-card-second {
+    margin: 1.5em 0 1em 0;
   }
 }

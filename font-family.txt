@@ -1,0 +1,2 @@
+font-family: 'Bebas Neue', cursive;
+font-family: 'Open Sans', sans-serif;
