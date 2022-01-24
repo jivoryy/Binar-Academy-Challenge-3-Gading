@@ -91,6 +91,42 @@ section {
   background-image: url("../img/features.jpg");
 }
 
+.timeline {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.content-body {
+  position: relative;
+  padding-left: 4em;
+}
+
+.timeline:first-child::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: -15px;
+  height: 110%;
+  width: 2px;
+  background-color: white;
+}
+
+.timeline-title::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -21.5px;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  border: 2px solid white;
+}
+
+.timeline:first-child .timeline-title::before {
+  background-color: white;
+}
+
 /* Syst Req */
 
 #requirements {
@@ -267,5 +303,23 @@ footer {
 
   .quotes-card-second {
     margin: 1.5em 0 1em 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .timeline:first-child::before {
+    height: 114%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .timeline:first-child::before {
+    height: 120%;
+  }
+}
+
+@media screen and (min-width: 1079px) {
+  .timeline:first-child::before {
+    height: 126%;
   }
 }
