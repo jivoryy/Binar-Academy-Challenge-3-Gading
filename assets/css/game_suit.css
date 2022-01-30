@@ -1,0 +1,170 @@
+body {
+  background-color: #9c835f;
+}
+
+header {
+  padding-top: 30px;
+}
+
+.chevron {
+  position: relative;
+  display: inline-block;
+  color: #724c21;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1em 1em 0 0;
+  left: 10px;
+  top: 30px;
+  transform: rotate(-45deg);
+  vertical-align: top;
+}
+
+.chevron.left {
+  left: 50px;
+  transform: rotate(-135deg);
+}
+
+.icon-nav {
+  height: 80px;
+  width: 80px;
+  margin: 15px 15px 0 80px;
+}
+
+.game-brand {
+  position: absolute;
+  display: inline-block;
+  color: #f9b23d;
+  text-align: center;
+  font-size: 36px;
+  line-height: 49px;
+  top: -70px;
+  left: 230px;
+}
+
+.suit-game-window {
+  display: grid;
+  text-align: center;
+  align-content: center;
+  margin-top: 50px;
+  width: 100vw;
+}
+
+.spacer-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.choice {
+  position: relative;
+  width: 223px;
+  height: 204px;
+}
+
+.suit-icon.batu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  width: 128px;
+  height: 92px;
+}
+
+.suit-icon.gunting {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  width: 134px;
+  height: 160px;
+}
+
+.suit-icon.kertas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  width: 115px;
+  height: 150px;
+}
+
+.suit-center {
+  display: flex;
+  justify-content: center;
+}
+
+.versus-text {
+  display: block;
+  color: #bd0000;
+  font-size: 200px;
+  letter-spacing: 18px;
+}
+
+.player-win {
+  display: none;
+  position: relative;
+  width: 296px;
+  height: 186px;
+  padding: 23px;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  transform: rotate(-31deg);
+}
+
+.bot-win {
+  display: none;
+  position: relative;
+  width: 296px;
+  height: 186px;
+  padding: 23px;
+  border-radius: 10px;
+  color: white;
+  background-color: #bd0000;
+  transform: rotate(31deg);
+}
+
+.draw {
+  display: none;
+  position: relative;
+  width: 296px;
+  height: 186px;
+  padding: 60px;
+  border-radius: 10px;
+  color: white;
+  background-color: gray;
+}
+
+.refresh-icon {
+  width: 77px;
+  height: 71px;
+}
+
+.player.active {
+  background-color: #c4c4c4;
+  border-radius: 30px;
+}
+
+.bot.active {
+  background-color: #c4c4c4;
+  border-radius: 30px;
+}
+
+/* 2K Media Query */
+
+@media screen and (min-width: 2559px) and (min-height: 1439px) {
+  .header {
+    height: 10vh;
+  }
+
+  .suit-game-window {
+    height: 90vh;
+  }
+}

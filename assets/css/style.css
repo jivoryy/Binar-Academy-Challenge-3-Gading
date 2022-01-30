@@ -1,5 +1,55 @@
 /* FONTS */
 
+/* bebas-neue-regular - latin */
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.woff2") format("woff2"),
+    url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.woff") format("woff"),
+    url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.ttf")
+      format("truetype"),
+    url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.svg#BebasNeue")
+      format("svg");
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans/open-sans-v27-latin-regular.eot");
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.woff2") format("woff2"),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.woff") format("woff"),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.ttf") format("truetype"),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.svg#OpenSans")
+      format("svg");
+}
+
+/* open-sans-700 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/open-sans/open-sans-v27-latin-700.eot");
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/open-sans/open-sans-v27-latin-700.woff2") format("woff2"),
+    url("../fonts/open-sans/open-sans-v27-latin-700.woff") format("woff"),
+    url("../fonts/open-sans/open-sans-v27-latin-700.ttf") format("truetype"),
+    url("../fonts/open-sans/open-sans-v27-latin-700.svg#OpenSans") format("svg");
+}
+
+/* TYPOGRAPHY */
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
