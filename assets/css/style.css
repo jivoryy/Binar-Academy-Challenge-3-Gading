@@ -5,6 +5,7 @@
   font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.eot"); /* IE9 Compat Modes */
   src: local(""),
     url("../fonts/bebas-neue/bebas-neue-v8-latin-regular.eot?#iefix")
@@ -22,6 +23,7 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url("../fonts/open-sans/open-sans-v27-latin-regular.eot");
   src: local(""),
     url("../fonts/open-sans/open-sans-v27-latin-regular.eot?#iefix")
@@ -38,6 +40,7 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url("../fonts/open-sans/open-sans-v27-latin-700.eot");
   src: local(""),
     url("../fonts/open-sans/open-sans-v27-latin-700.eot?#iefix")
@@ -63,7 +66,7 @@ nav {
 
 h1 {
   font-family: "Bebas Neue", cursive;
-  font-size: 65px;
+  font-size: 50px;
   font-weight: bold;
   letter-spacing: 3px;
   line-height: 64px;
@@ -323,6 +326,12 @@ footer {
 
   #newsletter {
     height: 100vh;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  h1 {
+    font-size: 65px;
   }
 }
 

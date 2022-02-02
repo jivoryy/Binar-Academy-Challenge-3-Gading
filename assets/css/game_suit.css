@@ -112,7 +112,7 @@ header {
   position: relative;
   width: 296px;
   height: 186px;
-  padding: 23px;
+  padding: 20px;
   border-radius: 10px;
   color: white;
   background-color: green;
@@ -124,7 +124,7 @@ header {
   position: relative;
   width: 296px;
   height: 186px;
-  padding: 23px;
+  padding: 20px;
   border-radius: 10px;
   color: white;
   background-color: #bd0000;
@@ -166,5 +166,93 @@ header {
 
   .suit-game-window {
     height: 90vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .chevron {
+    top: 60px;
+  }
+
+  .chevron.left {
+    left: 20px;
+  }
+
+  .icon-nav {
+    margin: 45px 15px 0 30px;
+  }
+
+  .game-brand {
+    top: -100px;
+    left: 150px;
+  }
+
+  .suit-game-window {
+    margin-top: 100px;
+  }
+
+  .tulisan-player h2 {
+    font-size: 28px;
+  }
+
+  .choice {
+    width: 111.5px;
+    height: 102px;
+  }
+
+  .suit-icon.batu {
+    width: 64px;
+    height: 46px;
+  }
+
+  .suit-icon.gunting {
+    width: 67px;
+    height: 80px;
+  }
+
+  .suit-icon.kertas {
+    width: 57.5px;
+    height: 75px;
+  }
+
+  .versus-text {
+    font-size: 80px;
+    letter-spacing: 2px;
+  }
+
+  .player-win {
+    width: 120px;
+    height: 93px;
+    padding: 0px;
+    border-radius: 10px;
+  }
+  .player-win h1 {
+    font-size: 28px;
+    margin: 0 !important;
+    padding: 5px;
+    line-height: 20px;
+  }
+
+  .bot-win {
+    width: 84.57px;
+    height: 93px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .bot-win h1 {
+    font-size: 35px;
+    margin: 0 !important;
+    padding: 15px;
+    line-height: 10px;
+  }
+
+  .draw {
+    width: 84.57px;
+    height: 93px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .draw h1 {
+    font-size: 40px;
   }
 }
