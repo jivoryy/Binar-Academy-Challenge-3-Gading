@@ -13,5 +13,3 @@
 ---
 
 ##### ALREADY DEPLOYED IN GITHUB PAGE
-
-##### Check rename

@@ -11,7 +11,7 @@ class Game {
     this.playerWin = document.querySelector(".player-win"); // select the center div, hidden in first load
     this.botWin = document.querySelector(".bot-win"); // select the center div, hidden in first load
     this.draw = document.querySelector(".draw"); // select the center div, hidden in first load
-    this.howLongTheAnimation = 1200; //in miliseconds, better if its divideable by 300. Animation in AcakAcakAcak()
+    this.howLongTheAnimation = 1200; //in miliseconds, better if its divideable by 300. Animation in RandomChoiceAnimation()
   }
 
   //reset all choices from having .active class
@@ -21,6 +21,17 @@ class Game {
         choice.classList.remove("active");
       }
     });
+  }
+
+  MakeChoiceUnclickable(allChoices, animationTime) {
+    allChoices.forEach((choice) => {
+      choice.style.pointerEvents = "none";
+    });
+    setTimeout((fungsi) => {
+      allChoices.forEach((choice) => {
+        choice.style.pointerEvents = "auto";
+      });
+    }, animationTime);
   }
 
   //generate random number between 1, 2, and 3 then designate every number for the bot's choice
@@ -40,6 +51,7 @@ class Game {
         console.log("COM chooses PAPER!");
         break;
     }
+    document.querySelector(this.botChoice).classList.add("active");
   }
 
   //showing .player-win div in center and hide the others
@@ -72,55 +84,26 @@ class Game {
     console.log("---------------ROUND END---------------");
   }
 
-  //determine the winner
-  GameResult(P1Choice, randomNumber) {
-    //"yo dawg, i heard you like switches. so i place switch inside of a switch" *insert XZibit meme*
-    switch (P1Choice) {
-      case 1:
-        switch (randomNumber) {
-          case 2:
-            this.PlayerWin();
-            break;
-          case 3:
-            this.BotWin();
-            break;
-          default:
-            this.Draw();
-            break;
-        }
-        break;
-      case 2:
-        switch (randomNumber) {
-          case 1:
-            this.BotWin();
-            break;
-          case 3:
-            this.PlayerWin();
-            break;
-          default:
-            this.Draw();
-            break;
-        }
-        break;
-      default:
-        switch (randomNumber) {
-          case 1:
-            this.PlayerWin();
-            break;
-          case 2:
-            this.BotWin();
-            break;
-          default:
-            this.Draw();
-            break;
-        }
-        break;
-    }
+  VersusReset() {
+    this.versusText.style.display = "block";
+    this.botWin.style.display = "none";
+    this.draw.style.display = "none";
+    this.playerWin.style.display = "none";
   }
 
-  //do you remember when a gameshow host randomize a winner's/quiz participant's phone number by saying "ACAKACAKACAKACAKACAK"?
-  //this is it.
-  AcakAcakAcak() {
+  //determine the winner
+  GameResult(P1Choice, randomNumber) {
+    if (
+      (P1Choice == 1 && randomNumber == 2) ||
+      (P1Choice == 2 && randomNumber == 3) ||
+      (P1Choice == 3 && randomNumber == 1)
+    )
+      this.PlayerWin();
+    else if (P1Choice == randomNumber) this.Draw();
+    else this.BotWin();
+  }
+
+  RandomChoiceAnimation() {
     const botChoices = document.querySelectorAll(".bot");
     let queueList = 0;
     const start = new Date().getTime();
@@ -141,49 +124,49 @@ class Game {
 
   // only run when player choose rock
   playBatu() {
+    this.MakeChoiceUnclickable(this.allChoices, this.howLongTheAnimation);
+    this.ActiveStateRemoval(this.allChoices); //reset
     let P1Choice = 1;
     console.log("YOU choose ROCK!");
-    this.ActiveStateRemoval(this.allChoices); //reset
     this.playerBatu.classList.add("active"); //highlight the player's choice
-    this.AcakAcakAcak();
+    this.RandomChoiceAnimation();
     setTimeout((fungsi) => {
       this.#botChoiceGenerator(); //generate bot's choice
-      document.querySelector(this.botChoice).classList.add("active"); //highlight the bot's choice
       this.GameResult(P1Choice, this.randomNumber); //determine the winner
-    }, this.howLongTheAnimation); //because AcakAcakAcak uses setInterval, the remaining function must be contained in the setTimeout
+    }, this.howLongTheAnimation); //because RandomChoiceAnimation uses setInterval, the remaining function must be contained in the setTimeout
   }
 
   // only run when player choose scissors
   playGunting() {
+    this.MakeChoiceUnclickable(this.allChoices, this.howLongTheAnimation);
+    this.ActiveStateRemoval(this.allChoices); //reset
     let P1Choice = 2;
     console.log("YOU choose SCISSORS!");
-    this.ActiveStateRemoval(this.allChoices); //reset
     this.playerGunting.classList.add("active"); //highlight the player's choice
-    this.AcakAcakAcak();
+    this.RandomChoiceAnimation();
     setTimeout((fungsi) => {
       this.#botChoiceGenerator(); //generate bot's choice
-      document.querySelector(this.botChoice).classList.add("active"); //highlight the bot's choice
       this.GameResult(P1Choice, this.randomNumber); //determine the winner
-    }, this.howLongTheAnimation); //because AcakAcakAcak uses setInterval, the remaining function must be contained in the setTimeout
+    }, this.howLongTheAnimation); //because RandomChoiceAnimation uses setInterval, the remaining function must be contained in the setTimeout
   }
 
   // only run when player choose paper
   playKertas() {
+    this.MakeChoiceUnclickable(this.allChoices, this.howLongTheAnimation);
+    this.ActiveStateRemoval(this.allChoices); //reset
     let P1Choice = 3;
     console.log("YOU choose PAPER!");
-    this.ActiveStateRemoval(this.allChoices); //reset
     this.playerKertas.classList.add("active"); //highlight the player's choice
-    this.AcakAcakAcak();
+    this.RandomChoiceAnimation();
     setTimeout((fungsi) => {
       this.#botChoiceGenerator(); //generate bot's choice
-      document.querySelector(this.botChoice).classList.add("active"); //highlight the bot's choice
       this.GameResult(P1Choice, this.randomNumber); //determine the winner
-    }, this.howLongTheAnimation); //because AcakAcakAcak uses setInterval, the remaining function must be contained in the setTimeout
+    }, this.howLongTheAnimation); //because RandomChoiceAnimation uses setInterval, the remaining function must be contained in the setTimeout
   }
 
-  //well, the figma show a refresh button. yes, it's unnecessary. but hey, it's better than a not working button.
   refresher() {
-    location.reload();
+    this.ActiveStateRemoval(this.allChoices);
+    this.VersusReset();
   }
 }
 

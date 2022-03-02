@@ -1,0 +1,30 @@
+{
+  "name": "binar-academy-fsw-19-challenge",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jivoryy/Binar_Academy-FSW_Challenge.git"
+  },
+  "author": "Jivoryy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jivoryy/Binar_Academy-FSW_Challenge/issues"
+  },
+  "homepage": "https://github.com/jivoryy/Binar_Academy-FSW_Challenge#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
