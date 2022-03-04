@@ -4,7 +4,7 @@
 
 This was the challenge from Binar Academy for Full Stack Web Development bootcamp class in Wave 19.
 
-From this project, it is expected that the students (myself) can learn to make projects using the tools that used by the industry today. The tech stack that are used is MERN (MongoDB, Express, React, Node.js).
+From this project, it is expected that the students (myself) can learn to make projects using the tools that used by the industry today. The tech stack that is used is MERN stack (MongoDB, Express, React, Node.js).
 
 ---
 
