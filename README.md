@@ -57,7 +57,7 @@ npm run start
 
 ### Default port = 8080
 
-### For changing port, go to port variable in index.js (line 5)
+For changing port, go to port variable in index.js (line 5)
 
 # Ongoing Development
 
