@@ -14,8 +14,8 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/game_suit.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/game_suit.css" />
 
     <!-- Bar Title -->
     <title>Binar Challenge : Chapter 4 -- ROCK, PAPER, SCISSORS! SHOOT!</title>
@@ -23,8 +23,8 @@
   <body>
     <header>
       <nav>
-        <a href="index.html"><span class="chevron left"></span></a>
-        <img src="./assets/img/logo 1.png" alt="" class="icon-nav" />
+        <a href="/"><span class="chevron left"></span></a>
+        <img src="../assets/img/logo 1.png" alt="" class="icon-nav" />
         <div class="position-relative">
           <span class="game-brand">ROCK PAPER SCISSORS</span>
         </div>
@@ -43,7 +43,7 @@
               <div class="choice batu player" onclick="player.playBatu()">
                 <img
                   class="suit-icon batu"
-                  src="./assets/img/batu.png"
+                  src="../assets/img/batu.png"
                   alt=""
                 />
               </div>
@@ -54,7 +54,7 @@
               <div class="choice kertas player" onclick="player.playKertas()">
                 <img
                   class="suit-icon kertas"
-                  src="./assets/img/kertas.png"
+                  src="../assets/img/kertas.png"
                   alt=""
                 />
               </div>
@@ -65,7 +65,7 @@
               <div class="choice gunting player" onclick="player.playGunting()">
                 <img
                   class="suit-icon gunting"
-                  src="./assets/img/gunting.png"
+                  src="../assets/img/gunting.png"
                   alt=""
                 />
               </div>
@@ -99,7 +99,7 @@
               <div class="choice batu bot">
                 <img
                   class="suit-icon batu"
-                  src="./assets/img/batu.png"
+                  src="../assets/img/batu.png"
                   alt=""
                 />
               </div>
@@ -110,7 +110,7 @@
               <div class="choice kertas bot">
                 <img
                   class="suit-icon kertas"
-                  src="./assets/img/kertas.png"
+                  src="../assets/img/kertas.png"
                   alt=""
                 />
               </div>
@@ -121,7 +121,7 @@
               <div class="choice gunting bot">
                 <img
                   class="suit-icon gunting"
-                  src="./assets/img/gunting.png"
+                  src="../assets/img/gunting.png"
                   alt=""
                 />
               </div>
@@ -134,7 +134,7 @@
           <div class="refresher">
             <img
               class="refresh-icon"
-              src="./assets/img/refresh.png"
+              src="../assets/img/refresh.png"
               alt=""
               onclick="player.refresher()"
             />
@@ -142,10 +142,10 @@
         </div>
       </div>
     </div>
-    <script src="./assets/js/game_suit_oop.js"></script>
+    <script src="../assets/js/game_suit_oop.js"></script>
     <!-- if you want to switch the script to the old one,
       please remember to remove the onclick trigger in every player's choices and the refresher-->
-    <!-- <script src="./assets/js/game_suit.js"></script> -->
-    <script src="./assets/js/fallback.js"></script>
+    <!-- <script src="../assets/js/game_suit.js"></script> -->
+    <script src="../assets/js/inside_folder_fallback.js"></script>
   </body>
 </html>

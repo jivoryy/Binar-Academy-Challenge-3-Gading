@@ -17,17 +17,17 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
     <!-- Bar Title -->
-    <title>Login to Jivoryy</title>
+    <title>Sign Up to Jivoryy</title>
   </head>
   <body>
     <section id="hero">
       <div class="container">
-        <div class="login-box d-flex gap-5 flex-column">
+        <div class="login-box d-flex gap-4 flex-column">
           <div class="mt-3 ms-3">
-            <a href="index.html">
+            <a href="/">
               <h4 class="fw-bold">
                 <span class="me-2 fw-bold"><</span> Back to Home
               </h4>
@@ -46,6 +46,16 @@
                   required
                 />
                 <br />
+                <label for="name"><h3>Name</h3></label>
+                <input
+                  id="name"
+                  class="form-control"
+                  name="name"
+                  type="text"
+                  maxlength="64"
+                  required
+                />
+                <br />
                 <label for="password"><h3>Password</h3></label>
                 <input
                   id="password"
@@ -58,12 +68,13 @@
               </div>
               <br />
               <button type="submit" class="btn btn-lg btn-warning">
-                Login
+                Sign Up
               </button>
             </form>
           </div>
         </div>
       </div>
     </section>
+    <script src="../assets/js/inside_folder_fallback.js"></script>
   </body>
 </html>

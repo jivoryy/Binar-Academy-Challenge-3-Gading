@@ -90,6 +90,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 /* CSS for EVERY PAGE SECTION */
 
 .user-logged-in {

@@ -3,6 +3,9 @@ const axios = require("axios");
 const session = require("express-session");
 const app = express();
 const port = 8080;
+const users = require("./routes/users_routes");
+const games = require("./routes/games_routes");
+let login = false;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -15,6 +18,13 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.get("/", (req, res) => {
+  res.render("home", { login });
+});
+
+app.use("/users", users);
+app.use("/games", games);
 
 app.use((err, req, res, next) => {
   res.status(500).json({

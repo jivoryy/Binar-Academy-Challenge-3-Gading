@@ -17,17 +17,17 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
     <!-- Bar Title -->
-    <title>Sign Up to Jivoryy</title>
+    <title>Login to Jivoryy</title>
   </head>
   <body>
     <section id="hero">
       <div class="container">
         <div class="login-box d-flex gap-5 flex-column">
           <div class="mt-3 ms-3">
-            <a href="index.html">
+            <a href="/">
               <h4 class="fw-bold">
                 <span class="me-2 fw-bold"><</span> Back to Home
               </h4>
@@ -36,27 +36,7 @@
           <div class="d-flex flex-row justify-content-center">
             <form class="align-self-center text-center" action="" method="post">
               <div>
-                <label for="username"><h3>Username</h3></label>
-                <input
-                  id="username"
-                  class="form-control"
-                  name="username"
-                  type="text"
-                  maxlength="64"
-                  required
-                />
-                <br />
-                <label for="name"><h3>Name</h3></label>
-                <input
-                  id="name"
-                  class="form-control"
-                  name="name"
-                  type="text"
-                  maxlength="64"
-                  required
-                />
-                <br />
-                <label for="password"><h3>Password</h3></label>
+                <label for="password"><h3>Confirm Current Password</h3></label>
                 <input
                   id="password"
                   class="form-control"
@@ -65,15 +45,26 @@
                   maxlength="50"
                   required
                 />
+                <br />
+                <label for="new_password"><h3>New Password</h3></label>
+                <input
+                  id="new_password"
+                  class="form-control"
+                  name="new_password"
+                  type="password"
+                  maxlength="50"
+                  required
+                />
               </div>
               <br />
               <button type="submit" class="btn btn-lg btn-warning">
-                Sign Up
+                Change Password
               </button>
             </form>
           </div>
         </div>
       </div>
     </section>
+    <script src="../assets/js/inside_folder_fallback.js"></script>
   </body>
 </html>
