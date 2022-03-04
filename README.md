@@ -61,7 +61,7 @@ npm run start
 
 # Ongoing Development
 
-There are some ongoing development for this project feature. Some of it are:
+There are some ongoing development for this project features. Some of it are:
 
 - [ ] Switching request handling from using basic Express to using Axios
 - [ ] Admin Dashboard
