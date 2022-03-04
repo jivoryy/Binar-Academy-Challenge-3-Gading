@@ -17,7 +17,7 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- Bar Title -->
     <title>Login to Jivoryy</title>
@@ -34,7 +34,11 @@
             </a>
           </div>
           <div class="d-flex flex-row justify-content-center">
-            <form class="align-self-center text-center" action="" method="post">
+            <form
+              class="align-self-center text-center"
+              action="/users/changepassword"
+              method="post"
+            >
               <div>
                 <label for="password"><h3>Confirm Current Password</h3></label>
                 <input
@@ -60,11 +64,18 @@
               <button type="submit" class="btn btn-lg btn-warning">
                 Change Password
               </button>
+              <br />
+              <br />
+              <% if (error) { %>
+              <div class="alert alert-danger" role="alert">
+                Wrong password! Try Again.
+              </div>
+              <% } %>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <script src="../assets/js/inside_folder_fallback.js"></script>
+    <script src="/assets/js/fallback.js"></script>
   </body>
 </html>

@@ -5,7 +5,6 @@ const app = express();
 const port = 8080;
 const users = require("./routes/users_routes");
 const games = require("./routes/games_routes");
-let login = false;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -20,7 +19,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render("home", { login });
+  res.render("home", { login: req.session.token, name: req.session.name });
 });
 
 app.use("/users", users);

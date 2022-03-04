@@ -17,7 +17,7 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- Bar Title -->
     <title>Sign Up to Jivoryy</title>
@@ -34,7 +34,11 @@
             </a>
           </div>
           <div class="d-flex flex-row justify-content-center">
-            <form class="align-self-center text-center" action="" method="post">
+            <form
+              class="align-self-center text-center"
+              action="register"
+              method="post"
+            >
               <div>
                 <label for="username"><h3>Username</h3></label>
                 <input
@@ -73,8 +77,12 @@
             </form>
           </div>
         </div>
+        <p class="text-center mt-1">
+          Already have an account?
+          <a href="/users/login" style="color: #ffb548">Login here!</a>
+        </p>
       </div>
     </section>
-    <script src="../assets/js/inside_folder_fallback.js"></script>
+    <script src="/assets/js/fallback.js"></script>
   </body>
 </html>
