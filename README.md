@@ -59,6 +59,31 @@ npm run start
 
 For changing port, go to port variable in index.js (line 5)
 
+# User Login
+
+```json
+  {
+    "username": "umaru",
+    "password": "himouto"
+  },
+  {
+    "username": "marin",
+    "password": "shiontan"
+  },
+  {
+    "username": "hirotaka",
+    "password": "AsahiSuperDryy"
+  },
+  {
+    "username": "mesintempur",
+    "password": "MANATUKANGINDOMI?!"
+  },
+  {
+    "username": "gading",
+    "password": "gading"
+  }
+```
+
 # Ongoing Development
 
 There are some ongoing development for this project features. Some of it are:
