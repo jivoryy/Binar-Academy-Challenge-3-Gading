@@ -26,8 +26,8 @@ The modules for this project are:
 1. Express
 1. EJS
 1. Express-session
-1. Axios
 1. Nodemon (Dev)
+1. Axios (Upcoming)
 
 # Installation Steps
 
