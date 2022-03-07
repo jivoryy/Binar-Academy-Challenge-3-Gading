@@ -21,6 +21,17 @@ function ActiveStateRemoval() {
   });
 }
 
+function MakeChoiceUnclickable(allChoices, animationTime) {
+  allChoices.forEach((choice) => {
+    choice.style.pointerEvents = "none";
+  });
+  setTimeout((fungsi) => {
+    allChoices.forEach((choice) => {
+      choice.style.pointerEvents = "auto";
+    });
+  }, animationTime);
+}
+
 //generate random number between 1, 2, and 3 then designate every number for the bot's choice
 function botChoiceGenerator() {
   randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -38,6 +49,7 @@ function botChoiceGenerator() {
       console.log("COM chooses PAPER!");
       break;
   }
+  document.querySelector(botChoice).classList.add("active"); //highlight the bot's choice
 }
 
 //showing .player-win div in center and hide the others
@@ -70,50 +82,23 @@ function Draw() {
   console.log("---------------ROUND END---------------");
 }
 
+function VersusReset() {
+  this.versusText.style.display = "block";
+  this.botWin.style.display = "none";
+  this.draw.style.display = "none";
+  this.playerWin.style.display = "none";
+}
+
 //determine the winner
 function GameResult(P1Choice, randomNumber) {
-  //"yo dawg, i heard you like switches. so i place switch inside of a switch" *insert XZibit meme*
-  switch (P1Choice) {
-    case 1:
-      switch (randomNumber) {
-        case 2:
-          PlayerWin();
-          break;
-        case 3:
-          BotWin();
-          break;
-        default:
-          Draw();
-          break;
-      }
-      break;
-    case 2:
-      switch (randomNumber) {
-        case 1:
-          BotWin();
-          break;
-        case 3:
-          PlayerWin();
-          break;
-        default:
-          Draw();
-          break;
-      }
-      break;
-    default:
-      switch (randomNumber) {
-        case 1:
-          PlayerWin();
-          break;
-        case 2:
-          BotWin();
-          break;
-        default:
-          Draw();
-          break;
-      }
-      break;
-  }
+  if (
+    (P1Choice == 1 && randomNumber == 2) ||
+    (P1Choice == 2 && randomNumber == 3) ||
+    (P1Choice == 3 && randomNumber == 1)
+  )
+    this.PlayerWin();
+  else if (P1Choice == randomNumber) this.Draw();
+  else this.BotWin();
 }
 
 //do you remember when a gameshow host randomize a winner's/quiz participant's phone number by saying "ACAKACAKACAKACAKACAK"?
@@ -141,6 +126,7 @@ function AcakAcakAcak() {
 playerChoices.forEach((playerChoice) => {
   // the hills are alive with the sound of a-clickkk~~~ with choice they have chose for a player sidee~~
   playerChoice.addEventListener("click", (fungsi) => {
+    MakeChoiceUnclickable(allChoices, howLongTheAnimation);
     let P1Choice;
     //detect the clicked div class
     if (playerChoice.classList.contains("batu")) {
@@ -161,7 +147,6 @@ playerChoices.forEach((playerChoice) => {
     AcakAcakAcak();
     setTimeout((fungsi) => {
       botChoiceGenerator(); //generate bot's choice
-      document.querySelector(botChoice).classList.add("active"); //highlight the bot's choice
       GameResult(P1Choice, randomNumber); //determine the winner
     }, howLongTheAnimation); //because AcakAcakAcak uses setInterval, the remaining function must be contained in the setTimeout
   });
@@ -169,5 +154,6 @@ playerChoices.forEach((playerChoice) => {
 
 //well, the figma show a refresh button. yes, it's unnecessary. but hey, it's better than a not working button.
 function refresher() {
-  location.reload();
+  ActiveStateRemoval(allChoices);
+  VersusReset();
 }

@@ -85,7 +85,31 @@ h3 {
   letter-spacing: 2px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 /* CSS for EVERY PAGE SECTION */
+
+.user-logged-in {
+  font-size: 1.25em;
+}
+
+.user-logged-in .dropdown-menu {
+  font-size: 12px;
+  margin-top: 0.75em;
+  --bs-bg-opacity: 0.75;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+.user-logged-in .dropdown-item {
+  font-weight: bold;
+}
 
 section {
   position: relative;
@@ -302,9 +326,34 @@ footer {
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
+
+/* Login Page */
+
+.login-box {
+  position: relative;
+  --width-login: 90vw;
+  width: var(--width-login);
+  height: calc(var(--width-login) * 4 / 3);
+  border-radius: 2em;
+  background-color: #aaaaaaaa;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* MEDIA QUERY */
 
-@media screen and (min-width: 767px) and (min-height: 992px) {
+@media (max-width: 768px) {
+  .user-logged-in .dropdown-menu {
+    --bs-bg-opacity: 0;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  }
+}
+
+@media (min-width: 767px) and (min-height: 992px) {
+  .login-box {
+    --width-login: 70vw;
+  }
+
   section {
     height: 100vh;
   }
@@ -315,7 +364,18 @@ footer {
   }
 }
 
-@media screen and (min-height: 500px) {
+@media (min-width: 1023px) {
+  .login-box {
+    --width-login: 20em;
+  }
+}
+@media (min-width: 1439px) {
+  .login-box {
+    --width-login: 25em;
+  }
+}
+
+@media (min-height: 500px) {
   #the-games {
     height: 100vh;
   }
@@ -329,19 +389,19 @@ footer {
   }
 }
 
-@media screen and (min-width: 300px) {
+@media (min-width: 300px) {
   h1 {
     font-size: 65px;
   }
 }
 
-@media screen and (min-width: 400px) {
+@media (min-width: 400px) {
   h1 {
     font-size: 80px;
   }
 }
 
-@media screen and (min-width: 1080px) {
+@media (min-width: 1080px) {
   .quotes-card {
     width: 25.1666em;
     height: 10.1666em;
@@ -355,7 +415,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 1079px) {
+@media (max-width: 1079px) {
   .quotes-card {
     margin: 1.5em 0 1em 0;
   }
@@ -365,19 +425,19 @@ footer {
   }
 }
 
-@media screen and (min-width: 767px) {
+@media (min-width: 767px) {
   .timeline:first-child::before {
     height: 114%;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .timeline:first-child::before {
     height: 120%;
   }
 }
 
-@media screen and (min-width: 1079px) {
+@media (min-width: 1079px) {
   .timeline:first-child::before {
     height: 126%;
   }
