@@ -7,7 +7,7 @@ class GameController {
       if (listUsers) {
         const user = listUsers.find((user) => user.token == req.session.token);
         if (user) {
-          res.render("games/suit");
+          res.render("games/suit", { name: req.session.name });
         } else {
           res.redirect("/users/login");
         }

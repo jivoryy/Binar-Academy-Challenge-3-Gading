@@ -1,8 +1,7 @@
 const express = require("express");
-const axios = require("axios");
 const session = require("express-session");
 const app = express();
-const port = 8080;
+const port = 8000;
 const users = require("./routes/users_routes");
 const games = require("./routes/games_routes");
 
