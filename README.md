@@ -1,6 +1,6 @@
 <p align="center">
-<img src="./public/assets/img/TAGGING%20JIVORYY.png" alt="Jivoryy Logo" width="100px"/>
-<img src="./public/assets/img/x%20img.png" alt="Jivoryy Logo" width="30" style="margin: 20px"/>
+<img src="./public/img/TAGGING%20JIVORYY.png" alt="Jivoryy Logo" width="100px"/>
+<img src="./public/img/x%20img.png" alt="Jivoryy Logo" width="30" style="margin: 20px"/>
 <img src="https://global-uploads.webflow.com/6100d0111a4ed76bc1b9fd54/616fd70b2be60a72b46f2da3_logo_7b6caab85699ca72e06917e9bad7512c.png" alt="Binar Academy Logo" width="100px"/>
 </p>
 
