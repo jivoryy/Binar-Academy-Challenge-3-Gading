@@ -1,6 +1,6 @@
-const { User } = require("../models/user");
+const { User } = require("../models-for-static/user");
 // const users = require("../db/user.json");
-const { UserFunc } = require("../models/userFunc");
+const { UserFunc } = require("../models-for-static/userFunc");
 
 class UserController {
   static async userLogin(req, res, next) {

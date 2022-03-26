@@ -1,4 +1,4 @@
-const { UserFunc } = require("../models/userFunc");
+const { UserFunc } = require("../models-for-static/userFunc");
 
 class GameController {
   static async playSuitGame(req, res, next) {
