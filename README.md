@@ -31,18 +31,20 @@ The softwares that are needed for this project are:
 
 The (node) modules that are needed for this project are:
 
-1. Express
-2. EJS
-3. Express-session
-4. Nodemon (Dev)
-5. pg
-6. sequelize
-7. sequelize-cli
-8. Axios (Upcoming)
+1. express
+2. ejs
+3. Nodemon (Dev)
+4. pg
+5. sequelize
+6. sequelize-cli
+7. express-session
+8. bcrypt
+9. jsonwebtoken
+10. axios (Upcoming)
 
 # Installation Steps
 
-### Download | Clone
+## Download | Clone
 
 ```bash
 gh repo clone jivoryy/Binar_Academy-FSW_Challenge
@@ -54,19 +56,65 @@ or
 git clone https://github.com/jivoryy/Binar_Academy-FSW_Challenge.git
 ```
 
-### Install Module
+## Install Module
 
 ```bash
 npm install
 ```
 
-### Start NPM
+## Config Database
+
+Config file is located in /config/config.json. Please configure accordingly to the database config.
+
+## Create Database
+
+If sequelize-cli is installed locally:
+
+```bash
+npx sequelize-cli db:create
+```
+
+If sequelize-cli is installed globally:
+
+```bash
+sequelize db:create
+```
+
+## Use Migrations
+
+If sequelize-cli is installed locally:
+
+```bash
+npx sequelize-cli db:migrate
+```
+
+If sequelize-cli is installed globally:
+
+```bash
+sequelize db:migrate
+```
+
+## Use Seeders
+
+If sequelize-cli is installed locally:
+
+```bash
+npx sequelize-cli db:seed:all
+```
+
+If sequelize-cli is installed globally:
+
+```bash
+sequelize db:seed:all
+```
+
+## Start NPM
 
 ```bash
 npm run start
 ```
 
-### Default port = 8080
+## Default port = 8080
 
 For changing port, go to port variable in index.js (line 5)
 

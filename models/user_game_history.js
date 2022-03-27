@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const user_game = require("./user_game");
 module.exports = (sequelize, DataTypes) => {
   class user_game_history extends Model {
     /**
@@ -13,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   user_game_history.init(
     {
-      user_id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4 },
+      user_id: DataTypes.UUID,
       playedAt: DataTypes.DATE,
       result: DataTypes.STRING,
       score: DataTypes.INTEGER,

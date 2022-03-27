@@ -1,5 +1,4 @@
 const { User } = require("../models-for-static/user");
-// const users = require("../db/user.json");
 const { UserFunc } = require("../models-for-static/userFunc");
 
 class UserController {
@@ -27,26 +26,6 @@ class UserController {
       next(error);
     }
   }
-
-  // static userLogin(req, res) {
-  //   const body = req.body;
-  //   if (users) {
-  //     const user = users.find((user) => user.username == body.username);
-  //     if (user && user.password == body.password) {
-  //       req.session.username = user.username;
-  //       req.session.name = user.name;
-  //       req.session.token = user.token;
-  //       res.redirect("/");
-  //     } else {
-  //       res.redirect("/users/login?wrong=1");
-  //     }
-  //   } else {
-  //     throw {
-  //       status: 404,
-  //       message: "Database not found!",
-  //     };
-  //   }
-  // }
 
   static userLogout(req, res) {
     req.session.destroy();

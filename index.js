@@ -17,6 +17,11 @@ app.use(
   })
 );
 
+// Temporary code, moving to controller
+app.get("/", (req, res) => {});
+
+//
+
 app.get("/", (req, res) => {
   res.render("home", { login: req.session.token, name: req.session.name });
 });

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   user_game_biodata.init(
     {
-      user_id: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4 },
+      user_id: DataTypes.UUID,
       name: DataTypes.STRING,
       bio: DataTypes.TEXT,
     },
