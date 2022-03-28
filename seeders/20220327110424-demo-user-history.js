@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert("user_game_histories", [
+    await queryInterface.bulkInsert("user_game_history", [
       {
         user_id: "2b37a77d-ba6a-49d3-9195-6c9177a23766",
         playedAt: new Date("2015-08-17T14:24:00").toISOString(),
@@ -174,7 +174,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-
-    await queryInterface.bulkDelete("user_game_histories", null);
+    await queryInterface.bulkDelete("user_game_history", null);
   },
 };

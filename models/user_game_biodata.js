@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
+      paranoid: true,
+      freezeTableName: true,
       modelName: "user_game_biodata",
     }
   );

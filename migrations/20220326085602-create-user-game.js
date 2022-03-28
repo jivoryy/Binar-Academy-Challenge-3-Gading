@@ -1,13 +1,13 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("user_games", {
-      // id: {
-      //   allowNull: false,
-      //   autoIncrement: true,
-      //   type: Sequelize.INTEGER,
-      // },
+    await queryInterface.createTable("user_game", {
       id: {
+        allowNull: false,
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
+      },
+      user_id: {
         autoIncrement: false,
         primaryKey: true,
         allowNull: false,
@@ -34,9 +34,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      deletedAt: {
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("user_games");
+    await queryInterface.dropTable("user_game");
   },
 };

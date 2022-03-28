@@ -1,26 +1,27 @@
-const { User } = require("../models-for-static/user");
-const { UserFunc } = require("../models-for-static/userFunc");
+const {
+  user_game,
+  user_game_biodata,
+  user_game_history,
+} = require("../models");
+const bcrypt = require("bcrypt");
 
 class UserController {
   static async userLogin(req, res, next) {
     const body = req.body;
     try {
-      const listUsers = await UserFunc.getData();
-      if (listUsers) {
-        const user = listUsers.find((user) => user.username == body.username);
-        if (user && user.password == body.password) {
-          req.session.username = user.username;
-          req.session.name = user.name;
-          req.session.token = user.token;
-          res.redirect("/");
-        } else {
-          res.redirect("/users/login?wrong=1");
-        }
+      const user = await user_game.findOne({
+        where: { username: body.username },
+      });
+      if (!user) {
+        res.redirect("/users/login?wrong=1");
+      }
+      if (bcrypt.compareSync(body.password, user.password)) {
+        req.session.user_id = user.user_id;
+        req.session.username = user.username;
+        req.session.is_admin = user.is_admin;
+        res.redirect("/");
       } else {
-        throw {
-          status: 404,
-          message: "Database not found!",
-        };
+        res.redirect("/users/login?wrong=1");
       }
     } catch (error) {
       next(error);
@@ -35,39 +36,27 @@ class UserController {
   static async userChangePassword(req, res, next) {
     const body = req.body;
     try {
-      const listUsers = await UserFunc.getData();
-      if (listUsers) {
-        let indexReplace;
-        const user = listUsers.find((user, index) => {
-          if (user.username == req.session.username) {
-            indexReplace = index;
-            return user;
-          }
+      if (req.session.user_id) {
+        const user = await user_game.findOne({
+          where: { user_id: req.session.user_id },
         });
-        if (user && user.password == body.password) {
-          const newUser = new User(
-            user.name,
-            user.username,
-            body.new_password,
-            user.token
+        if (bcrypt.compareSync(body.password, user.password)) {
+          user_game.update(
+            {
+              password: await bcrypt.hash(body.new_password, 10),
+            },
+            {
+              where: {
+                user_id: req.session.user_id,
+              },
+            }
           );
-          listUsers.splice(indexReplace, 1, newUser);
-          let writeFile = await UserFunc.writeData(listUsers);
-          if (writeFile.status === 200) {
-            res.status(writeFile.status);
-            req.session.password = body.new_password;
-            res.redirect("/");
-          } else {
-            throw writeFile;
-          }
+          res.redirect("/");
         } else {
           res.redirect("/users/changepassword?wrong=1");
         }
       } else {
-        throw {
-          status: 404,
-          message: "Database not found!",
-        };
+        res.redirect("/users/login");
       }
     } catch (error) {
       next(error);
@@ -77,32 +66,24 @@ class UserController {
   static async userRegister(req, res, next) {
     const body = req.body;
     try {
-      const listUsers = await UserFunc.getData();
-      if (listUsers) {
-        let newToken = "dicobatokenbaru";
-        let newUser = new User(
-          body.name,
-          body.username,
-          body.password,
-          newToken
+      await user_game
+        .create({
+          username: body.username,
+          password: bcrypt.hash(body.password, 10),
+        })
+        .then(
+          async () => {
+            const user = await user_game.findOne({
+              where: { username: body.username },
+            });
+            if (!user) res.redirect("/");
+            req.session.user_id = user.user_id;
+            req.session.username = user.username;
+            req.session.is_admin = user.is_admin;
+            res.redirect("/");
+          },
+          (reason) => res.send(reason)
         );
-        listUsers.push(newUser);
-        let writeFile = await UserFunc.writeData(listUsers);
-        if (writeFile.status === 200) {
-          res.status(writeFile.status);
-          req.session.name = body.name;
-          req.session.username = body.username;
-          req.session.token = newToken;
-          res.redirect("/");
-        } else {
-          throw writeFile;
-        }
-      } else {
-        throw {
-          status: 404,
-          message: "Database not Found!",
-        };
-      }
     } catch (error) {
       next(error);
     }

@@ -136,11 +136,16 @@ For changing port, go to port variable in index.js (line 5)
   {
     "username": "mesintempur",
     "password": "MANATUKANGINDOMI?!"
-  },
-  {
-    "username": "gading",
-    "password": "gading"
   }
+```
+
+# Admin Login
+
+```json
+{
+  "username": "jivoryy",
+  "password": "test1234"
+}
 ```
 
 # Ongoing Development

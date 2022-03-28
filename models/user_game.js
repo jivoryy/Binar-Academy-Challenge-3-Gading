@@ -12,15 +12,23 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       user_game.hasOne(models.user_game_biodata, {
         foreignKey: { name: "user_id", type: DataTypes.UUID },
+        as: "biodata",
       });
       user_game.hasMany(models.user_game_history, {
+        foreignKey: { name: "user_id", type: DataTypes.UUID },
+        as: "histories",
+      });
+      models.user_game_biodata.belongsTo(user_game, {
+        foreignKey: { name: "user_id", type: DataTypes.UUID },
+      });
+      models.user_game_history.belongsTo(user_game, {
         foreignKey: { name: "user_id", type: DataTypes.UUID },
       });
     }
   }
   user_game.init(
     {
-      id: {
+      user_id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
@@ -31,6 +39,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
+      paranoid: true,
+      freezeTableName: true,
       modelName: "user_game",
     }
   );

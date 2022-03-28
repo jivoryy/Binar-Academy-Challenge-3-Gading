@@ -1,21 +1,23 @@
-const { UserFunc } = require("../models-for-static/userFunc");
+const {
+  user_game,
+  user_game_biodata,
+  user_game_history,
+} = require("../models");
 
 class GameController {
   static async playSuitGame(req, res, next) {
     try {
-      const listUsers = await UserFunc.getData();
-      if (listUsers) {
-        const user = listUsers.find((user) => user.token == req.session.token);
+      if (req.session.user_id) {
+        const user = await user_game.findOne({
+          where: { user_id: req.session.user_id },
+        });
         if (user) {
-          res.render("games/suit", { name: req.session.name });
+          res.render("games/suit", { name: user.username });
         } else {
           res.redirect("/users/login");
         }
       } else {
-        throw {
-          status: 404,
-          message: "Database not found!",
-        };
+        res.redirect("/users/login");
       }
     } catch (error) {
       next(error);

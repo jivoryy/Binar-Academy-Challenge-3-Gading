@@ -18,12 +18,16 @@ app.use(
 );
 
 // Temporary code, moving to controller
-app.get("/", (req, res) => {});
+app.get("/test", (req, res) => {
+  res.send("TEST");
+});
 
 //
 
 app.get("/", (req, res) => {
-  res.render("home", { login: req.session.token, name: req.session.name });
+  res.render("home", {
+    username: req.session.username,
+  });
 });
 
 app.use("/users", users);
