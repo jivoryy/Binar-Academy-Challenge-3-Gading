@@ -40,7 +40,8 @@ The (node) modules that are needed for this project are:
 7. express-session
 8. bcrypt
 9. jsonwebtoken
-10. axios (Upcoming)
+10. dotenv
+11. axios (Upcoming)
 
 # Installation Steps
 
@@ -108,15 +109,19 @@ If sequelize-cli is installed globally:
 sequelize db:seed:all
 ```
 
+## Create .env
+
+Please make .env file first before running the server. Please use the template below for the .env file:
+
+```env
+SERVER_PORT=[your designated port]
+```
+
 ## Start NPM
 
 ```bash
 npm run start
 ```
-
-## Default port = 8080
-
-For changing port, go to port variable in index.js (line 5)
 
 # User Login
 

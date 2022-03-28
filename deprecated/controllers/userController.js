@@ -1,5 +1,5 @@
-const { User } = require("../models-for-static/user");
-const { UserFunc } = require("../models-for-static/userFunc");
+const { User } = require("../models/user");
+const { UserFunc } = require("../models/userFunc");
 
 class UserController {
   static async userLogin(req, res, next) {

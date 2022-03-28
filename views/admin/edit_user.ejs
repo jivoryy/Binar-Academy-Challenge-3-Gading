@@ -15,22 +15,23 @@
   <link rel="stylesheet" href="/css/admin.css" />
 
   <!-- Bar Title -->
-  <title>Sign Up to Jivoryy</title>
+  <title>The Dashboard</title>
 </head>
 
 <body>
+  <%- include("../partials/navbar") %>
   <div class="container">
     <div class="user-list-table">
       <div class="d-flex justify-content-between mb-3">
-        <h1><span style="color: #ffb548">Sign</span> Up</h1>
-        <a href="/">
+        <h1><span style="color: #ffb548">Edit</span> User Details</h1>
+        <a href="/admin">
           <button class="btn btn-secondary">
             <i class="bi bi-caret-left-fill" style="margin-right: 0.4em"></i>
-            Back to Home
+            Back to Dashboard
           </button>
         </a>
       </div>
-      <form action="register" method="post" class="px-5 pt-5">
+      <form action="<%= data.user_id %> " method="post" class="px-5 pt-5">
         <div class="row mb-4">
           <div class="col-3">
             <label for="username">
@@ -38,7 +39,7 @@
             </label>
           </div>
           <div class="col-6">
-            <input id="username" class="form-control" name="username" type="text" maxlength="64" required />
+            <input id="username" class="form-control" name="username" type="text" maxlength="64" value="<%= data.username  %> " required />
           </div>
         </div>
         <div class="row mb-4">
@@ -48,7 +49,25 @@
             </label>
           </div>
           <div class="col-6">
-            <input id="password" class="form-control" name="password" type="password" maxlength="64" required />
+            <input id="password" class="form-control" name="password" type="text" maxlength="64" required />
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-3">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="is_admin" id="is_admin_false" value="false" <% if(!data.is_admin) { %> checked <% } %> />
+              <label class="form-check-label" for="is_admin_false">
+                User
+              </label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="is_admin" id="is_admin_true" value="true" <% if(data.is_admin) {%> checked <% } %> />
+              <label class="form-check-label" for="is_admin_true">
+                Admin
+              </label>
+            </div>
           </div>
         </div>
         <h2 class="mb-4">User Bio</h2>
@@ -59,7 +78,7 @@
             </label>
           </div>
           <div class="col-6">
-            <input id="name" class="form-control" name="name" type="text" maxlength="64" required />
+            <input id="name" class="form-control" name="name" type="text" maxlength="64" value="<%= data.biodata.name  %> " required />
           </div>
         </div>
         <div class="row mb-4">
@@ -69,22 +88,18 @@
             </label>
           </div>
           <div class="col-6">
-            <input id="bio" class="form-control" name="bio" type="text" maxlength="64" />
+            <input id="bio" class="form-control" name="bio" type="text" maxlength="64" value="<%= data.biodata.bio  %> " />
           </div>
         </div>
         <div class="row">
           <div class="col mt-4 text-end">
             <button type="submit" class="btn btn-lg btn-warning mt-4">
-              Sign Up
+              Confirm Edit
             </button>
           </div>
         </div>
       </form>
     </div>
-    <p class="text-center mt-1">
-      Already have an account?
-      <a href="/users/login" style="color: #ffb548">Login here!</a>
-    </p>
   </div>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -19,7 +19,11 @@ class UserController {
         req.session.user_id = user.user_id;
         req.session.username = user.username;
         req.session.is_admin = user.is_admin;
-        res.redirect("/");
+        if (req.session.is_admin) {
+          res.redirect("/admin/");
+        } else {
+          res.redirect("/");
+        }
       } else {
         res.redirect("/users/login?wrong=1");
       }
@@ -66,24 +70,41 @@ class UserController {
   static async userRegister(req, res, next) {
     const body = req.body;
     try {
-      await user_game
-        .create({
-          username: body.username,
-          password: bcrypt.hash(body.password, 10),
-        })
-        .then(
-          async () => {
-            const user = await user_game.findOne({
+      const checkUser = await user_game.findOne({
+        where: { username: body.username },
+      });
+      if (checkUser) {
+        res.redirect("/users/login");
+      } else {
+        await user_game
+          .create({
+            username: body.username,
+            password: await bcrypt.hash(body.password, 10),
+          })
+          .then(async () => {
+            const checkUserId = await user_game.findOne({
               where: { username: body.username },
             });
-            if (!user) res.redirect("/");
-            req.session.user_id = user.user_id;
-            req.session.username = user.username;
-            req.session.is_admin = user.is_admin;
-            res.redirect("/");
-          },
-          (reason) => res.send(reason)
-        );
+            await user_game_biodata.create({
+              user_id: checkUserId.user_id,
+              name: body.name,
+              bio: body.bio,
+            });
+          })
+          .then(
+            async () => {
+              const user = await user_game.findOne({
+                where: { username: body.username },
+              });
+              if (!user) res.redirect("/");
+              req.session.user_id = user.user_id;
+              req.session.username = user.username;
+              req.session.is_admin = user.is_admin;
+              res.redirect("/");
+            },
+            (reason) => res.send(reason)
+          );
+      }
     } catch (error) {
       next(error);
     }
