@@ -109,7 +109,7 @@ If sequelize-cli is installed globally:
 sequelize db:seed:all
 ```
 
-## Create .env
+## Create .env file (Environment Variables)
 
 Please make .env file first before running the server. Please use the template below for the .env file:
 
@@ -123,7 +123,11 @@ SERVER_PORT=[your designated port]
 npm run start
 ```
 
-# User Login
+# Data from Seeders
+
+If you run the seeders (with sequelize), these are some details about the seeders data:
+
+## User Login
 
 ```json
   {
@@ -144,7 +148,7 @@ npm run start
   }
 ```
 
-# Admin Login
+## Admin Login
 
 ```json
 {
@@ -153,8 +157,67 @@ npm run start
 }
 ```
 
+# Admin Dashboard
+
+If you log in as admin, there is a dashboard for you to read, add, edit, or delete a user detail from the database. Please be cautious. The dashboard cannot be accessed if there is no admin user in the database. Admin can edit self data and revoked the admin previleges.
+
+# API to Database
+
+There is an API for the database. The endpoint is "**server URL**/api/".
+
+All HTTP method require a request body in a certain key-value JSON format. Please follow this format guide. The mandatory key-value is marked with [REQUIRED]. If there is none of the [REQUIRED] mark, the key-value is not mandatory to be entered in the HTTP request body.
+
+## GET request (listing all users)
+
+```json
+{
+  "admin_username": "ADMIN_USERNAME[REQUIRED]",
+  "admin_password": "ADMIN_USERNAME[REQUIRED]"
+}
+```
+
+## POST request (create new user)
+
+```json
+{
+  "admin_username": "ADMIN_USERNAME[REQUIRED]",
+  "admin_password": "ADMIN_USERNAME[REQUIRED]",
+  "username": "NEW_USERNAME[REQUIRED]",
+  "password": "NEW_USERNAME_PASSWORD[REQUIRED]",
+  "name": "NEW_USERNAME_NAME[REQUIRED]",
+  "is_admin": true|false,
+  "bio": "NEW_USERNAME_BIO",
+}
+```
+
+## PUT request (update user)
+
+```json
+{
+  "admin_username": "ADMIN_USERNAME[REQUIRED]",
+  "admin_password": "ADMIN_USERNAME[REQUIRED]",
+  "user_id": "EXISTING_USERID[REQUIRED]",
+  "username": "NEW_USERNAME",
+  "password": "NEW_USERNAME_PASSWORD",
+  "name": "NEW_USERNAME_NAME",
+  "is_admin": true|false,
+  "bio": "NEW_USERNAME_BIO",
+}
+```
+
+## DELETE request (delete user)
+
+```json
+{
+  "admin_username": "ADMIN_USERNAME[REQUIRED]",
+  "admin_password": "ADMIN_USERNAME[REQUIRED]",
+  "user_id": "EXISTING_USERID[REQUIRED]"
+}
+```
+
 # Ongoing Development
 
 There are some ongoing development for this project features. Some of it are:
 
 - [ ] Switching request handling from using basic Express to using Axios
+- [ ] Make the API Controller much cleaner

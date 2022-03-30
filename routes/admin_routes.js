@@ -1,11 +1,5 @@
 const router = require("express").Router();
-const bcrypt = require("bcrypt");
 const { AdminController } = require("../controllers/adminController");
-const {
-  user_game,
-  user_game_biodata,
-  user_game_history,
-} = require("../models");
 
 router.get("/", AdminController.getAdminDashboard);
 router.get("/edit/:user_id", AdminController.getEditForm);
