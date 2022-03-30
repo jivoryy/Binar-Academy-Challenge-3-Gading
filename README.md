@@ -221,3 +221,4 @@ There are some ongoing development for this project features. Some of it are:
 
 - [ ] Switching request handling from using basic Express to using Axios
 - [ ] Make the API Controller much cleaner
+- [ ] Using JWT instead of express-session for much secure connection.
