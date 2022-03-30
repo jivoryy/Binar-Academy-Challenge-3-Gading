@@ -11,14 +11,14 @@ if (!cssLoaded) {
 
   link.type = link2.type = "text/css";
   link.rel = link2.type = "stylesheet";
-  link.href = "/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css";
-  link2.href = "/assets/css/style.css";
+  link.href = "/css/bootstrap-5.1.3/bootstrap.min.css";
+  link2.href = "/css/style.css";
 
   document.head.appendChild(link);
   document.head.appendChild(link2);
 
   document.write(
-    '<script src="/assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>'
+    '<script src="/js/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>'
   );
 }
 

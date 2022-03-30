@@ -14,8 +14,8 @@
     />
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/game_suit.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/game_suit.css" />
 
     <!-- Bar Title -->
     <title>Binar Challenge : Chapter 4 -- ROCK, PAPER, SCISSORS! SHOOT!</title>
@@ -24,7 +24,7 @@
     <header>
       <nav>
         <a href="/"><span class="chevron left"></span></a>
-        <img src="/assets/img/logo 1.png" alt="" class="icon-nav" />
+        <img src="/img/logo 1.png" alt="" class="icon-nav" />
         <div class="position-relative">
           <span class="game-brand">ROCK PAPER SCISSORS</span>
         </div>
@@ -35,35 +35,27 @@
         <div class="col-4 suit-left">
           <div class="row">
             <div class="col spacer-icon tulisan-player">
-              <h2>PLAYER 1</h2>
+              <h2><%= name %></h2>
             </div>
           </div>
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice batu player" onclick="player.playBatu()">
-                <img class="suit-icon batu" src="/assets/img/batu.png" alt="" />
+                <img class="suit-icon batu" src="/img/batu.png" alt="" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice kertas player" onclick="player.playKertas()">
-                <img
-                  class="suit-icon kertas"
-                  src="/assets/img/kertas.png"
-                  alt=""
-                />
+                <img class="suit-icon kertas" src="/img/kertas.png" alt="" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice gunting player" onclick="player.playGunting()">
-                <img
-                  class="suit-icon gunting"
-                  src="/assets/img/gunting.png"
-                  alt=""
-                />
+                <img class="suit-icon gunting" src="/img/gunting.png" alt="" />
               </div>
             </div>
           </div>
@@ -73,7 +65,7 @@
             <h1 class="versus-text">VS</h1>
           </div>
           <div class="player-win col-4 py-3">
-            <h1 style="margin-bottom: 0.2em">PLAYER 1</h1>
+            <h1 style="margin-bottom: 0.2em">PLAYER</h1>
             <h1>WIN</h1>
           </div>
           <div class="bot-win col-4">
@@ -93,29 +85,21 @@
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice batu bot">
-                <img class="suit-icon batu" src="/assets/img/batu.png" alt="" />
+                <img class="suit-icon batu" src="/img/batu.png" alt="" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice kertas bot">
-                <img
-                  class="suit-icon kertas"
-                  src="/assets/img/kertas.png"
-                  alt=""
-                />
+                <img class="suit-icon kertas" src="/img/kertas.png" alt="" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col spacer-icon">
               <div class="choice gunting bot">
-                <img
-                  class="suit-icon gunting"
-                  src="/assets/img/gunting.png"
-                  alt=""
-                />
+                <img class="suit-icon gunting" src="/img/gunting.png" alt="" />
               </div>
             </div>
           </div>
@@ -126,7 +110,7 @@
           <div class="refresher">
             <img
               class="refresh-icon"
-              src="/assets/img/refresh.png"
+              src="/img/refresh.png"
               alt=""
               onclick="player.refresher()"
             />
@@ -134,10 +118,10 @@
         </div>
       </div>
     </div>
-    <script src="/assets/js/game_suit_oop.js"></script>
+    <script src="/js/game_suit_oop.js"></script>
     <!-- if you want to switch the script to the old one,
       please remember to remove the onclick trigger in every player's choices and the refresher-->
-    <!-- <script src="../assets/js/game_suit.js"></script> -->
-    <script src="/assets/js/fallback.js"></script>
+    <!-- <script src="../js/game_suit.js"></script> -->
+    <script src="/js/fallback.js"></script>
   </body>
 </html>

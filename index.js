@@ -1,10 +1,11 @@
 const express = require("express");
-const axios = require("axios");
 const session = require("express-session");
+require("dotenv").config();
 const app = express();
-const port = 8080;
 const users = require("./routes/users_routes");
 const games = require("./routes/games_routes");
+const admin = require("./routes/admin_routes");
+const APIroute = require("./routes/api_routes");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -19,11 +20,16 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render("home", { login: req.session.token, name: req.session.name });
+  res.render("home", {
+    username: req.session.username,
+    is_admin: req.session.is_admin,
+  });
 });
 
+app.use("/admin", admin);
 app.use("/users", users);
 app.use("/games", games);
+app.use("/api", APIroute);
 
 app.use((err, req, res, next) => {
   res.status(500).json({
@@ -39,6 +45,8 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen(port, () =>
-  console.log(`Server nyala. Alamat http://localhost:${port}`)
+app.listen(process.env.SERVER_PORT, () =>
+  console.log(
+    `Server nyala. Alamat http://localhost:${process.env.SERVER_PORT}`
+  )
 );

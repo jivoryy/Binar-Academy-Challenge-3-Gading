@@ -1,0 +1,52 @@
+body {
+  position: relative;
+  color: white;
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+  background-image: url("../img/requirements.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-list-table {
+  padding: 2.5em 2em;
+  border-radius: 5%;
+  background-color: #00000088;
+}
+
+#table-user {
+  width: 100%;
+}
+
+#table-user td,
+#table-user th {
+  border: 1px solid #ddd;
+  padding: 0.2em 0.8em;
+}
+
+#table-user tr:nth-child(even) {
+  background-color: #000000aa;
+}
+
+#table-user tr:hover {
+  background-color: #000000;
+}
+
+#table-user th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #a7772f;
+  color: white;
+}
+
+#user-history-table {
+  width: 100%;
+}
+
+#user-history-table td,
+#user-history-table th {
+  border: 1px solid #ddd;
+  padding: 0.2em 0.8em;
+}
