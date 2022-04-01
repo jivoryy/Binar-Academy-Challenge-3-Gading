@@ -7,7 +7,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 router.use(
   session({
-    secret: "my-so-secret-key",
+    secret: process.env.SESSION_SECRET_KEY,
     resave: false,
     saveUninitialized: false,
   })

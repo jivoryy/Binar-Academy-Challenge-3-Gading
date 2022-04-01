@@ -20,7 +20,7 @@ const find = async () => {
   });
   // data = JSON.stringify(data, null, 2);
   // data = JSON.parse(data);
-  console.log(data.is_admin);
+  console.log(data);
 };
 
 // const find = async () => {
