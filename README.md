@@ -168,7 +168,7 @@ If you log in as admin, there is a dashboard for you to read, add, edit, or dele
 
 There is an API for the database. The endpoint is "**server URL**/api/(version)".
 
-## API Version 1
+## API Version 1 (endpoint: "**server URL**/api/v1")
 
 All HTTP method require a request body in a certain key-value JSON format. Please follow this format guide. The mandatory key-value is marked with [REQUIRED]. If there is none of the [REQUIRED] mark, the key-value is not mandatory to be entered in the HTTP request body.
 
@@ -220,7 +220,7 @@ All HTTP method require a request body in a certain key-value JSON format. Pleas
 }
 ```
 
-## API Version 2
+## API Version 2 (endpoint: "**server URL**/api/v2")
 
 Please login first to make a access token. The login endpoint is "**server URL**/api/v2/login". Put the token to the Authorization section in request header. Only **admins** can log to the API.
 
