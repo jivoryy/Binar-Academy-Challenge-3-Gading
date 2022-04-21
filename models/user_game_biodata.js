@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    static createNew({ user_id, name, bio }) {
+      return this.create({ user_id, name, bio });
+    }
   }
   user_game_biodata.init(
     {

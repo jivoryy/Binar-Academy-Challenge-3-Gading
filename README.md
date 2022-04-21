@@ -114,7 +114,10 @@ sequelize db:seed:all
 Please make .env file first before running the server. Please use the template below for the .env file:
 
 ```env
-SERVER_PORT=[your designated port]
+PORT=[your designated port]
+NODE_ENV=[your stage ENV, preferred ENV is development]
+SESSION_SECRET_KEY=[your session secret key, random bytes token is preferred]
+ACCESS_TOKEN_SECRET=[your JWT secret key, random bytes token is preferred]
 ```
 
 ## Start NPM
@@ -163,11 +166,13 @@ If you log in as admin, there is a dashboard for you to read, add, edit, or dele
 
 # API to Database
 
-There is an API for the database. The endpoint is "**server URL**/api/".
+There is an API for the database. The endpoint is "**server URL**/api/(version)".
+
+## API Version 1
 
 All HTTP method require a request body in a certain key-value JSON format. Please follow this format guide. The mandatory key-value is marked with [REQUIRED]. If there is none of the [REQUIRED] mark, the key-value is not mandatory to be entered in the HTTP request body.
 
-## GET request (listing all users)
+### GET request (listing all users)
 
 ```json
 {
@@ -176,7 +181,7 @@ All HTTP method require a request body in a certain key-value JSON format. Pleas
 }
 ```
 
-## POST request (create new user)
+### POST request (create new user)
 
 ```json
 {
@@ -190,7 +195,7 @@ All HTTP method require a request body in a certain key-value JSON format. Pleas
 }
 ```
 
-## PUT request (update user)
+### PUT request (update user)
 
 ```json
 {
@@ -205,7 +210,7 @@ All HTTP method require a request body in a certain key-value JSON format. Pleas
 }
 ```
 
-## DELETE request (delete user)
+### DELETE request (delete user)
 
 ```json
 {
@@ -215,10 +220,68 @@ All HTTP method require a request body in a certain key-value JSON format. Pleas
 }
 ```
 
+## API Version 2
+
+Please login first to make a access token. The login endpoint is "**server URL**/api/v2/login". Put the token to the Authorization section in request header. Only **admins** can log to the API.
+
+The login API require a request body in a certain key-value JSON format. Some HTTP method also require a request body in a certain key-value JSON format. The mandatory key-value is marked with [REQUIRED]. If there is none of the [REQUIRED] mark, the key-value is not mandatory to be entered in the HTTP request body. Please follow this format guide.
+
+### Login Request (POST)
+
+```json
+{
+  "username": "ADMIN_USERNAME[REQUIRED]",
+  "password": "ADMIN_USERNAME[REQUIRED]"
+}
+```
+
+### GET request (listing all users)
+
+#### Authorization needed
+
+No request body needed.
+
+### POST request (create new user)
+
+#### Authorization needed
+
+```json
+{
+  "username": "NEW_USERNAME[REQUIRED]",
+  "password": "NEW_USERNAME_PASSWORD[REQUIRED]",
+  "name": "NEW_USERNAME_NAME[REQUIRED]",
+  "is_admin": true|false,
+  "bio": "NEW_USERNAME_BIO",
+}
+```
+
+### PUT request (update user)
+
+#### Authorization needed
+
+```json
+{
+  "user_id": "EXISTING_USERID[REQUIRED]",
+  "username": "NEW_USERNAME",
+  "password": "NEW_USERNAME_PASSWORD",
+  "name": "NEW_USERNAME_NAME",
+  "is_admin": true|false,
+  "bio": "NEW_USERNAME_BIO",
+}
+```
+
+### DELETE request (delete user)
+
+#### Authorization needed
+
+```json
+{
+  "user_id": "EXISTING_USERID[REQUIRED]"
+}
+```
+
 # Ongoing Development
 
 There are some ongoing development for this project features. Some of it are:
 
 - [ ] Switching request handling from using basic Express to using Axios
-- [ ] Make the API Controller much cleaner
-- [ ] Using JWT instead of express-session for much secure connection.

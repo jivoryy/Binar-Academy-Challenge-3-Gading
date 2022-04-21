@@ -3,9 +3,9 @@ const {
   user_game,
   user_game_biodata,
   user_game_history,
-} = require("../models");
+} = require("../../../models");
 
-class APIController {
+class APIControllerV1 {
   static async createAPI(req, res, next) {
     try {
       if (
@@ -291,4 +291,4 @@ class APIController {
   }
 }
 
-module.exports = { APIController };
+module.exports = { APIControllerV1 };

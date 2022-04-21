@@ -1,15 +1,11 @@
-const {
-  user_game,
-  user_game_biodata,
-  user_game_history,
-} = require("../models");
+const { user_game } = require("../models");
 
 class GameController {
   static async playSuitGame(req, res, next) {
     try {
-      if (req.session.user_id) {
+      if (req.user.user_id) {
         const user = await user_game.findOne({
-          where: { user_id: req.session.user_id },
+          where: { user_id: req.user.user_id },
         });
         if (user) {
           res.render("games/suit", { name: user.username });
