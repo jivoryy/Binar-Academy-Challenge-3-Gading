@@ -4,6 +4,7 @@ const games = require("./games_routes");
 const admin = require("./admin_routes");
 const usersAPI = require("./users_api_routes");
 const exceptionHandling = require("./exception_handling_routes");
+const checkAuthLocal = require("../middleware/authCheckLocal");
 
 router.get("/", (req, res) => {
   if (!req.user) res.render("home", { username: null, is_admin: null });
@@ -14,7 +15,7 @@ router.get("/", (req, res) => {
 });
 router.use("/admin", admin);
 router.use("/users", users);
-router.use("/games", games);
+router.use("/games", checkAuthLocal.checkAuth, games);
 router.use("/api", usersAPI);
 router.use(exceptionHandling);
 

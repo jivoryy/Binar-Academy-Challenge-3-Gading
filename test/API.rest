@@ -1,7 +1,10 @@
-GET http://localhost:8000/api/v1
-content-type: application/json
+GET http://localhost:8000/api/v2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNTJlYmQyMGEtNGE4My00ZjMyLWI4YTItZWJiZDRmNjFlOWIxIiwidXNlcm5hbWUiOiJqaXZvcnl5IiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY1MDU1ODQ5MiwiZXhwIjoxNjUwNTU5MzkyfQ.Sp116_ToyO_nu4b9dxp30FRb-lSVKFcni0_vq8hDyuQ
+###
+POST http://localhost:8000/api/v2/login
+Content-Type: application/json
 
 {
-    "admin_username":"jivoryy",
-    "admin_password":"test1234"
+    "username":"jivoryy",
+    "password":"test1234"
 }

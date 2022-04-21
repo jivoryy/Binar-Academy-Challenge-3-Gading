@@ -1,15 +1,20 @@
 const router = require("express").Router();
 const user = require("../controllers/userController");
+const checkAuthLocal = require("../middleware/authCheckLocal");
 
-router.get("/login", user.getLoginForm);
-router.post("/login/auth", user.login);
+router.get("/login", checkAuthLocal.checkNotAuth, user.getLoginForm);
+router.post("/login/auth", checkAuthLocal.checkNotAuth, user.login);
 
-router.get("/logout", user.logout);
+router.get("/logout", checkAuthLocal.checkAuth, user.logout);
 
-router.get("/register", user.getRegisterForm);
-router.post("/register", user.register);
+router.get("/register", checkAuthLocal.checkNotAuth, user.getRegisterForm);
+router.post("/register", checkAuthLocal.checkNotAuth, user.register);
 
-router.get("/changepassword", user.getChangePasswordForm);
-router.post("/changepassword", user.changePassword);
+router.get(
+  "/changepassword",
+  checkAuthLocal.checkAuth,
+  user.getChangePasswordForm
+);
+router.post("/changepassword", checkAuthLocal.checkAuth, user.changePassword);
 
 module.exports = router;
