@@ -1,6 +1,5 @@
 "use strict";
 const { Model } = require("sequelize");
-const user_game = require("./user_game");
 module.exports = (sequelize, DataTypes) => {
   class user_game_history extends Model {
     /**

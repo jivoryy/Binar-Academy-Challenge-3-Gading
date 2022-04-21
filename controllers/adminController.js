@@ -7,12 +7,12 @@ const {
 
 class AdminController {
   static async getAdminDashboard(req, res, next) {
-    if (req.session.is_admin) {
+    if (req.user.is_admin) {
       try {
         const user = await user_game.findAll({});
         res.render("admin/dashboard", {
-          username: req.session.username,
-          is_admin: req.session.is_admin,
+          username: req.user.username,
+          is_admin: req.user.is_admin,
           data: user,
         });
       } catch (error) {
@@ -24,7 +24,7 @@ class AdminController {
   }
 
   static async getEditForm(req, res, next) {
-    if (req.session.is_admin) {
+    if (req.user.is_admin) {
       const user_id = req.params.user_id;
       try {
         const user = await user_game.findOne({
@@ -35,8 +35,8 @@ class AdminController {
           where: { user_id: user_id },
         });
         res.render("admin/edit_user", {
-          username: req.session.username,
-          is_admin: req.session.is_admin,
+          username: req.user.username,
+          is_admin: req.user.is_admin,
           data: user,
         });
       } catch (error) {
@@ -48,7 +48,7 @@ class AdminController {
   }
 
   static async postEditForm(req, res, next) {
-    if (req.session.is_admin) {
+    if (req.user.is_admin) {
       const body = req.body;
       const user_id = req.params.user_id;
       try {
@@ -80,7 +80,7 @@ class AdminController {
   }
 
   static async getUserDetail(req, res, next) {
-    if (req.session.is_admin) {
+    if (req.user.is_admin) {
       const user_id = req.params.user_id;
       try {
         const user = await user_game.findOne({
@@ -91,8 +91,8 @@ class AdminController {
           where: { user_id: user_id },
         });
         res.render("admin/detail_user", {
-          is_admin: req.session.is_admin,
-          username: req.session.username,
+          is_admin: req.user.is_admin,
+          username: req.user.username,
           data: user,
         });
       } catch (error) {
@@ -104,7 +104,7 @@ class AdminController {
   }
 
   static async deleteUserData(req, res, next) {
-    if (req.session.is_admin) {
+    if (req.user.is_admin) {
       const user_id = req.params.user_id;
       try {
         await user_game
